@@ -2,6 +2,7 @@ package steps;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.By;
 import utils.CommonMethods;
 import utils.Constants;
 import utils.ExcelReader;
@@ -51,6 +52,11 @@ public class AddEmployeesSteps extends CommonMethods {
         click(dashboardPage.employeeListOption);
         sendToText(employeeListPage.empIdFieldText,empId);
         click(employeeListPage.searchButton);
+        //driver.findElements(By.xpath("//*[@id='resultTable']/tbody/tr"))
+        for(int i=0;i<employeeListPage.listOfRows.size();i++){
+            String value =employeeListPage.listOfRows.get(i).getText();
+            System.out.println(value);
+        }
 
 
     }
