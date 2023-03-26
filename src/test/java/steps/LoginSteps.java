@@ -3,6 +3,7 @@ package steps;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import utils.CommonMethods;
 import utils.ConfigReader;
 
@@ -19,6 +20,6 @@ public class LoginSteps extends CommonMethods {
     }
     @Then("User successfully logged in")
     public void user_successfully_logged_in() {
-        System.out.println("Successfully Logged in");
+        Assert.assertTrue(dashboardPage.welcomeText.isDisplayed());
     }
 }
