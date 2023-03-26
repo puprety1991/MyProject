@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 public class AddEmployeesSteps extends CommonMethods {
+    String empId;
     @When("admin clicks on PIM option")
     public void admin_clicks_on_pim_option() {
         click(dashboardPage.pimOption);
@@ -24,7 +25,7 @@ public class AddEmployeesSteps extends CommonMethods {
     }
     @When("admin add multiple employees from excel using {string}")
     public void admin_add_multiple_employees_from_excel_using(String sheetName) {
-        String empId;
+
         List<Map<String, String>> employeesFromExcelFile = ExcelReader.excelListIntoMap(Constants.TESTDATA_FILEPATH, sheetName);
         Iterator<Map<String, String>> iterator = employeesFromExcelFile.iterator();
         while (iterator.hasNext()){
@@ -47,7 +48,10 @@ public class AddEmployeesSteps extends CommonMethods {
     }
     @Then("admin verifies it")
     public void admin_verifies_it() {
-        System.out.println("Verifies it");
+        click(dashboardPage.employeeListOption);
+        sendToText(employeeListPage.empIdFieldText,empId);
+        click(employeeListPage.searchButton);
+
 
     }
 }
