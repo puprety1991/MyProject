@@ -33,7 +33,7 @@ public class CommonMethods extends PageInitializer {
                 chromeOptions.addArguments("--no-sandbox");
                 chromeOptions.addArguments("--disable-dev-shm-usage");
                 chromeOptions.setHeadless(true);
-                driver=new ChromeDriver();
+                driver=new ChromeDriver(chromeOptions);
                 break;
             case "firefox":
                 WebDriverManager.firefoxdriver().setup();
