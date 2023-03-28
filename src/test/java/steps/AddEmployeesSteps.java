@@ -53,9 +53,9 @@ public class AddEmployeesSteps extends CommonMethods {
         sendToText(employeeListPage.empIdFieldText,empId);
         click(employeeListPage.searchButton);
         //driver.findElements(By.xpath("//*[@id='resultTable']/tbody/tr"))
-        for(int i=0;i<employeeListPage.listOfRows.size();i++){
-            String value =employeeListPage.listOfRows.get(i).getText();
-            System.out.println(value);
+        for(int i=0;i<employeeListPage.listOfEmpId.size();i++){
+            String value =employeeListPage.listOfEmpId.get(i).getText();
+            assertionEqual(empId,value);
         }
 
 

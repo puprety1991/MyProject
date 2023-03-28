@@ -2,8 +2,7 @@ package utils;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
-import org.assertj.core.api.BooleanAssert;
-import org.assertj.core.api.SoftAssertions;
+
 import org.junit.Assert;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -21,6 +20,7 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
@@ -35,7 +35,7 @@ public class CommonMethods extends PageInitializer {
                 ChromeOptions chromeOptions=new ChromeOptions();
                 chromeOptions.addArguments("--no-sandbox");
                 chromeOptions.addArguments("--disable-dev-shm-usage");
-                chromeOptions.setHeadless(true);
+                chromeOptions.setHeadless(false);
                 driver=new ChromeDriver(chromeOptions);
                 break;
             case "firefox":
@@ -125,6 +125,22 @@ public class CommonMethods extends PageInitializer {
     }
     public static void assertionEqual(String actual, String expected){
         Assert.assertEquals(actual,expected);
+    }
+    public static void employeeIdSearch(List<WebElement> listOfElement, String empId, WebElement nextPage){
+        boolean flag = true;
+        while (flag){
+            for(WebElement element:listOfElement){
+                String employee_id = element.getText();
+                if(employee_id.equalsIgnoreCase(empId)){
+                    click(element);
+                    flag = false;
+                    break;
+                }
+            }
+            if(flag){
+                click(nextPage);
+            }
+        }
     }
 
 
