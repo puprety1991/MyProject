@@ -6,7 +6,7 @@ Feature: Adding skills to Employee Functionality
     @smoke @addEmpSkill
     Scenario:Providing skills of employees
       When Admin clicks on employee list
-      And Admin clicks on employee id "	52399A"
+      And Admin clicks on employee id "52399A"
       When Admin clicks on Qualification option
       And Admin clicks on skills add button
       When Admin verify the drop down is enabled and select the value "Leadership"
