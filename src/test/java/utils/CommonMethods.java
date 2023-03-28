@@ -92,7 +92,13 @@ public class CommonMethods extends PageInitializer {
     }
     public static void dropDown(WebElement element,String text){
         Select select = new Select(element);
-        select.selectByVisibleText(text);
+        List<WebElement> options = select.getOptions();
+        for(WebElement actualTxtOption:options){
+            if(actualTxtOption.getText().equals(text)){
+                select.selectByVisibleText(text);
+            }
+        }
+
     }
     public static void switchToFrame(WebElement element){
         driver.switchTo().frame(element);
