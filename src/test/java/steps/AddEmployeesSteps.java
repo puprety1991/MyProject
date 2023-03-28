@@ -36,7 +36,7 @@ public class AddEmployeesSteps extends CommonMethods {
             sendToText(addEmployeePage.lastNameField,employee.get("LastName"));
             empId = getAttribute(addEmployeePage.employeeIdField,"value");
             System.out.println(empId);
-            //sendToText(addEmployeePage.photographField,employee.get("Photograph"));
+            sendToText(addEmployeePage.photographField,employee.get("Photograph"));
             if(!addEmployeePage.checkBox.isSelected()){
                 click(addEmployeePage.checkBox);
             }

@@ -1,6 +1,6 @@
 Feature: Login Functionality
 
-  @smoke
+  @login
   Scenario: Valid Credentials
     When User enters the username and password
     And User clicks on login button

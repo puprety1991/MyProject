@@ -3,7 +3,7 @@ Feature: Adding employee Functionality
     When User enters the username and password
     And User clicks on login button
 
-    @smoke @excel
+    @excel
     Scenario: adding employees to using excel file
       When admin clicks on PIM option
       And admin clicks on add Employee Option

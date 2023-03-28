@@ -19,6 +19,15 @@ public class DashboardPage extends CommonMethods {
     @FindBy(id = "menu_pim_viewEmployeeList")
     public WebElement employeeListOption;
 
+    @FindBy(xpath = "//*[text()='Admin']")
+    public WebElement adminOption;
+
+    @FindBy(xpath = "//*[text()='Qualifications']")
+    public WebElement qualificationOption;
+
+
+
+
     public DashboardPage(){
         PageFactory.initElements(driver,this);
     }
