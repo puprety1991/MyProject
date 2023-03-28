@@ -2,6 +2,9 @@ package utils;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
+import org.assertj.core.api.BooleanAssert;
+import org.assertj.core.api.SoftAssertions;
+import org.junit.Assert;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -119,6 +122,9 @@ public class CommonMethods extends PageInitializer {
     }
     public static String getAttribute(WebElement element,String value){
         return element.getAttribute(value);
+    }
+    public static void assertionEqual(String actual, String expected){
+        Assert.assertEquals(actual,expected);
     }
 
 

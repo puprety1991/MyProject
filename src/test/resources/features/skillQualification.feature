@@ -9,6 +9,6 @@ Feature: Adding skills Functionality
       And Admin clicks on Qualification
       When Admin selects skills option
       And Admin clicks on add button
-      And Admin enters the "Sport Players" and "Having 5 years of experiences"
+      And Admin enters the "Leadership" and "Excellent performance"
       And Admin clicks on save Button
       Then Admin verifies it

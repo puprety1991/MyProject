@@ -26,8 +26,12 @@ public class QualificationPage extends CommonMethods {
     @FindBy(id = "btnSave")
     public WebElement saveButton;
 
-    @FindBy(xpath = "//*[@id='recordsListTable']/tbody/tr/td")
+    @FindBy(xpath = "//table/tbody/tr/td[2]")
     public List<WebElement> savedSkills;
+
+    @FindBy(xpath = "//table/tbody/tr/td[3]")
+    public List<WebElement> savedSkillDescription;
+
 
 
 
